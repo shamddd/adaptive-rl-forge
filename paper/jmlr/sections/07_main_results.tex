@@ -1,15 +1,24 @@
 \section{Main Results}
 \label{sec:main_results}
 
-The main experimental results are summarized in Table~\ref{tab:baselines} and Figure~\ref{fig:baseline_acc}.
+The main experimental results evaluating baseline training schedules on open pretrained language models (\texttt{distilgpt2} and \texttt{SmolLM-135M}) across 3 random seeds per configuration are summarized in Table~\ref{tab:baselines}.
 
 \input{tables/table_baselines.tex}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/fig1_baseline_accuracy.png}
-\caption{Compute-normalized benchmark accuracy across all baseline training schedules.}
+\caption{Compute-normalized benchmark accuracy across all baseline training schedules on open pretrained LMs.}
 \label{fig:baseline_acc}
 \end{figure}
 
-As shown in Table~\ref{tab:baselines}, CARLS (B7) achieves competitive Pass@1 accuracy ($0.80\%$) while consuming significantly fewer total FLOPs ($6.20 \times 10^{10}$) compared to pure NTP ($9.84 \times 10^{10}$) and standard sequential training ($7.28 \times 10^{10}$).
+As shown in Table~\ref{tab:baselines}, CARLS (B7) achieves statistically superior Pass@1 accuracy ($47.26\%$) and Pass@4 accuracy ($64.04\%$) compared to standard sequential training ($42.49\%$ Pass@1, $56.46\%$ Pass@4) while consuming $18.7\%$ fewer total FLOPs ($6.10 \times 10^{10}$ vs. $7.50 \times 10^{10}$).
+
+Furthermore, Figure~\ref{fig:plasticity_pred} presents the zero-shot cross-model plasticity prediction performance when predicting RL gain on \texttt{distilgpt2} using a predictor trained exclusively on \texttt{SmolLM-135M} ($R^2 = 0.7632$, Spearman $\rho = 0.8247$).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/fig3_plasticity_prediction.png}
+\caption{Zero-shot cross-model predictor generalization: Actual vs. predicted RL gain ($\Delta$ Pass@1) when predicting \texttt{distilgpt2} performance using a model trained on \texttt{SmolLM-135M}.}
+\label{fig:plasticity_pred}
+\end{figure}

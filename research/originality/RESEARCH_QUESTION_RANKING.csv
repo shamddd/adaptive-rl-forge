@@ -1,0 +1,21 @@
+Research_Question,Novelty,Importance,Feasibility,JMLR_Fit,Conference_Fit,Compute_Req,Collision_Risk,Overall_Score,Selected
+"Can pre-RL diagnostic signals predict subsequent RL gain (delta RL) before intervention?",9,9,9,9,9,4,2,8.8,YES
+"Do predictors of RL plasticity learned on one model family generalize zero-shot to unseen model architectures?",10,9,9,10,9,4,1,9.2,YES (PRIMARY)
+"Does gradient alignment cos(g_NTP, g_RL) correlate with downstream RL capability acquisition?",9,9,9,9,9,3,2,8.7,YES
+"Are pretrained capability and subsequent RL plasticity distinct model properties?",9,9,8,9,9,4,2,8.5,YES
+"Does early RL excursion expand solution diversity ratio compared to post-training sharpening?",8,8,9,8,8,3,3,8.0,YES
+"Can dynamic compute scheduling (CARLS) improve compute-normalized performance and retention?",8,8,9,8,8,4,3,7.9,YES
+"Does policy entropy collapse correlate with permanent loss of language plasticity?",8,8,8,8,8,4,3,7.7,NO
+"Are there critical learning windows during pretraining where RL efficiency peaks?",8,8,8,8,8,4,3,7.6,NO
+"How does pretraining data composition causally alter later RL responsiveness?",9,9,6,9,8,7,4,7.4,NO
+"Do optimizer hyperparameters (weight decay, lr) alter future RL plasticity?",7,7,8,7,7,5,3,7.0,NO
+"What is the mathematical relation between local curvature and policy gradient step size?",8,8,5,9,7,6,4,6.8,NO
+"Can lightweight probing heads replace full gradient alignment calculations?",7,7,8,7,7,4,3,6.7,NO
+"How does KL divergence drift constrain multi-turn RL reasoning?",6,6,8,6,6,4,3,6.2,NO
+"Does LoRA rank influence the predictive accuracy of pre-RL gradient signals?",6,6,8,6,6,3,2,6.1,NO
+"Can RLVR verifiers be used to pre-screen pretraining data batches?",7,6,7,6,6,5,3,6.0,NO
+"Does dynamic token allocation reduce peak memory footprint during training?",5,5,9,5,5,2,2,5.5,NO
+"How do different reward models affect gradient alignment stability?",6,6,7,6,6,5,4,5.4,NO
+"What is the effect of batch size on policy entropy measurement precision?",4,4,9,4,4,2,2,4.8,NO
+"Can synthetic reasoning tasks replace natural language math benchmarks?",5,5,8,5,5,3,3,4.6,NO
+"Is gradient norm alone sufficient to predict training loss collapse?",4,4,9,4,4,2,4,4.2,NO

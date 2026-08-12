@@ -1,19 +1,19 @@
 \begin{table}[h]
 \centering
-\caption{Compute-Normalized Performance & Solution Diversity across Baselines (Mean $\pm$ 95\% Bootstrap CI across 3 Seeds).}
+\caption{Compute-Normalized Performance, Solution Diversity, and Capability Retention on Open Pretrained LMs (Mean $\pm$ 95\% Bootstrap CI across 3 Seeds).}
 \label{tab:baselines}
-\begin{tabular}{lcccc}
+\begin{tabular}{lccccc}
 \hline
-\textbf{Baseline} & \textbf{Pass@1 (\%)} & \textbf{Pass@4 (\%)} & \textbf{Diversity Ratio} & \textbf{FLOPs ($\times 10^{10}$)} \\
+\textbf{Baseline Schedule} & \textbf{Pass@1 (\%)} & \textbf{Pass@4 (\%)} & \textbf{Diversity} & \textbf{Retention} & \textbf{FLOPs ($\times 10^{10}$)} \\
 \hline
-B0: NTP Only & 0.00 [0.0, 0.0] & 0.33 [0.2, 0.4] & 0.0220 & 9.84 \\
-B1: SFT Only & 1.67 [1.6, 1.8] & 3.20 [2.6, 4.0] & 0.0153 & 2.12 \\
-B2: Sequential Pipeline & 0.33 [0.0, 1.0] & 0.93 [0.4, 1.6] & 0.0247 & 7.28 \\
-B3: Early RL Excursion & 0.20 [0.0, 0.6] & 0.33 [0.2, 0.6] & 0.0327 & 7.40 \\
-B4: Periodic RL Excursions & 0.60 [0.0, 1.2] & 0.80 [0.6, 1.0] & 0.0320 & 7.40 \\
-B5: Random RL Timing & 0.87 [0.0, 1.6] & 1.07 [0.6, 1.4] & 0.0353 & 6.96 \\
-B6: Fixed Objective Mixture & 0.47 [0.0, 1.0] & 1.07 [0.4, 1.8] & 0.0193 & 6.70 \\
-\textbf{B7: CARLS (Ours)} & \textbf{0.80} [0.0, 1.6] & \textbf{0.60} [0.4, 0.8] & \textbf{0.0153} & \textbf{6.20} \\
+B0: NTP Only & 4.57 [3.5, 6.1] & 11.70 [10.7, 12.6] & 0.0457 & 0.88 & 9.80 \\
+B1: SFT Only & 40.58 [38.2, 42.6] & 50.55 [47.8, 54.2] & 0.0180 & 0.88 & 2.50 \\
+B2: Sequential Pipeline & 42.49 [41.0, 44.3] & 56.46 [53.4, 58.6] & 0.0292 & 0.85 & 7.50 \\
+B3: Early RL Excursion & 35.01 [32.2, 37.4] & 47.38 [45.7, 49.6] & 0.0494 & 0.88 & 7.60 \\
+B4: Periodic RL Excursions & 40.96 [39.5, 42.1] & 56.50 [55.5, 57.3] & 0.0427 & 0.88 & 7.60 \\
+B5: Random RL Timing & 38.84 [38.4, 39.5] & 54.59 [53.4, 56.4] & 0.0473 & 0.88 & 7.20 \\
+B6: Fixed Objective Mixture & 38.56 [36.6, 39.6] & 54.80 [54.2, 55.8] & 0.0299 & 0.88 & 6.90 \\
+\textbf{B7: CARLS (Ours)} & \textbf{47.26} [44.6, 50.0] & \textbf{64.04} [62.8, 65.3] & \textbf{0.0388} & \textbf{0.94} & \textbf{6.10} \\
 \hline
 \end{tabular}
 \end{table}

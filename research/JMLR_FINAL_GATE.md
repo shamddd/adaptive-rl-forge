@@ -10,23 +10,20 @@
 
 | Gate Criterion | Status | Empirical / Document Verification Path |
 | :--- | :---: | :--- |
-| **1. Novel Contribution & Scope** | `PASS` | `research/NOVELTY.md` & `research/RELATED_WORK_MATRIX.csv` |
-| **2. Real Empirical Evidence** | `PASS` | Executed 50+ runs across B0–B7; `artifacts/master_experiment_results.csv` |
-| **3. Baselines & Multi-Seed Runs** | `PASS` | 3 seeds (42, 43, 44) per baseline; `artifacts/baseline_summary_table.csv` |
-| **4. Checkpoint Plasticity Dataset** | `PASS` | `artifacts/plasticity/checkpoint_rl_outcomes.parquet` |
-| **5. Statistical Validity** | `PASS` | 95% bootstrap CIs; `research/STATISTICAL_ANALYSIS.md` |
-| **6. Reproducibility Target** | `PASS` | `REPRODUCIBILITY.md` and `make reproduce-main` verified |
-| **7. Code Availability & Tests** | `PASS` | PyTorch/Transformers package `adaptive_rl_forge`; `pytest tests/` 100% pass |
-| **8. Official JMLR Formatting** | `PASS` | `paper/jmlr/jmlr2e.sty` & `paper/jmlr/main.tex` |
-| **9. Manuscript Compilation** | `PASS` | `paper/jmlr/main.pdf` compiled (0.31 MB < 5 MB JMLR limit) |
-| **10. Cover Letter** | `PASS` | `paper/jmlr/cover_letter.tex` & `paper/jmlr/cover_letter.pdf` built |
-| **11. COI Markers on AE/Reviewers** | `PASS` | AE/Reviewer candidates tagged with `AUTHOR MUST VERIFY COI` |
-| **12. Zero Fabricated Results** | `PASS` | Empirical verification complete; no invented data or benchmark numbers |
-| **13. GitHub Synchronization** | `PASS` | Remote `shamddd/adaptive-rl-forge` configured and synchronized |
+| **1. Software Architecture & Pipelines** | `PASS` | PyTorch/PEFT package `adaptive_rl_forge`; `pytest tests/` 100% pass |
+| **2. Reproducibility Infrastructure** | `PASS` | `REPRODUCIBILITY.md` and `make reproduce-main` verified |
+| **3. Pilot Baseline Implementations** | `PASS` | Baselines B0–B7 implemented with compute tracking |
+| **4. Truthful Author Metadata** | `PASS` | Independent Researcher metadata in `main.tex` & `cover_letter.tex` |
+| **5. Pretrained Model Scale Validation** | `BLOCKER` | Current experiments are 68K/268K pilot scale; 100M–1.5B+ models required |
+| **6. Cross-Model Generalization** | `BLOCKER` | Plasticity predictors must be evaluated across $\ge 2$ real model families |
+| **7. RL Plasticity Prediction Dataset** | `BLOCKER` | Need $\ge 8-12$ checkpoints per model family in `rl_plasticity_dataset.parquet` |
+| **8. Multi-Task Family Benchmarking** | `BLOCKER` | Benchmark suite across arithmetic, logic, and code deterministic verifiers |
+| **9. CARLS Superiority Validation** | `BLOCKER` | CARLS performance must be validated against SFT and sequential baselines on real LMs |
+| **10. Claim-Evidence Alignment** | `BLOCKER` | All claims in manuscript must be fully supported by `CLAIM_EVIDENCE_MATRIX.md` |
 
 ---
 
 ## Final Submission Gate Status
 
-> **PUBLICATION READINESS GATE STATUS: PASSED**  
-> The research repository, empirical experiment suite, statistical analysis, JMLR LaTeX manuscript, cover letter, and reproducibility infrastructure meet the formal submission standards for the Journal of Machine Learning Research.
+> **JMLR STATUS: NOT READY — LARGE-SCALE EMPIRICAL BLOCKERS REMAIN**  
+> The repository contains a complete software architecture, reproducibility workflow, and pilot experiment framework. However, it is **NOT** ready for JMLR submission until large-scale empirical validation on open pretrained language models (100M–1.5B+ parameters), cross-model generalization, and predictive plasticity evaluation are completed.

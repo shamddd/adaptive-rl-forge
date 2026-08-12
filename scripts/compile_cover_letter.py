@@ -75,7 +75,7 @@ def build_cover_letter_pdf():
     elements.append(Spacer(1, 12))
     elements.append(Paragraph("Thank you for considering our work. We look forward to your feedback.", body_style))
     elements.append(Spacer(1, 15))
-    elements.append(Paragraph("Sincerely,<br/><br/><b>Sham Thakare</b><br/>Corresponding Author<br/>Google DeepMind / Independent Research<br/>Email: <code>shamthakare@example.com</code>", body_style))
+    elements.append(Paragraph("Sincerely,<br/><br/><b>Sham Thakare</b><br/>Corresponding Author<br/>Independent Researcher<br/>Email: <code>shamthakare@example.com</code>", body_style))
 
     doc.build(elements)
     print(f"Successfully compiled JMLR cover letter to {pdf_path}")

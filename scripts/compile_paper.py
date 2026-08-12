@@ -99,7 +99,7 @@ def build_jmlr_pdf():
 
     # Title & Authors
     elements.append(Paragraph("When Should Language Models Learn from Reinforcement?<br/>Predicting Plasticity and Adaptively Scheduling Reinforcement Learning During Foundation-Model Training", title_style))
-    elements.append(Paragraph("<b>Sham Thakare</b><br/>Department of Computer Science, Google DeepMind / Independent Research<br/>San Francisco, CA 94105, USA &bull; <i>shamthakare@example.com</i>", author_style))
+    elements.append(Paragraph("<b>Sham Thakare</b><br/>Independent Researcher<br/>San Francisco, CA 94105, USA &bull; <i>shamthakare@example.com</i>", author_style))
 
     # Abstract
     elements.append(Paragraph("Abstract", abstract_title))

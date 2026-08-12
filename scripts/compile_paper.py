@@ -28,8 +28,8 @@ def build_jmlr_pdf():
         'DocTitle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=15,
-        leading=18,
+        fontSize=14,
+        leading=17,
         alignment=1, # Center
         spaceAfter=12
     )
@@ -98,8 +98,8 @@ def build_jmlr_pdf():
     elements = []
 
     # Title & Authors
-    elements.append(Paragraph("When Should Language Models Learn from Reinforcement?<br/>Predicting Plasticity and Adaptively Scheduling Reinforcement Learning During Foundation-Model Training", title_style))
-    elements.append(Paragraph("<b>Sham Thakare</b><br/>Independent Researcher<br/>San Francisco, CA 94105, USA &bull; <i>shamthakare@example.com</i>", author_style))
+    elements.append(Paragraph("Predicting Reinforcement-Learning Plasticity of Intermediate Language-Model Checkpoints:<br/>A Cross-Architecture Diagnostic Study", title_style))
+    elements.append(Paragraph("<b>Sham Thakare</b><br/>Independent Researcher<br/>Pune 411030, Maharashtra, India &bull; <i>shamthakare3000@gmail.com</i>", author_style))
 
     # Abstract
     elements.append(Paragraph("Abstract", abstract_title))
@@ -149,13 +149,13 @@ def build_jmlr_pdf():
     elements.append(Spacer(1, 10))
 
     # Figures
-    if os.path.exists("paper/jmlr/figures/fig1_baseline_accuracy.png"):
-        img1 = Image("paper/jmlr/figures/fig1_baseline_accuracy.png", width=420, height=210)
+    if os.path.exists("artifacts/figures/fig1_baseline_accuracy.png"):
+        img1 = Image("artifacts/figures/fig1_baseline_accuracy.png", width=420, height=210)
         elements.append(img1)
         elements.append(Paragraph("Figure 1: Compute-normalized benchmark accuracy across all baseline training schedules on open pretrained LMs.", caption_style))
 
-    if os.path.exists("paper/jmlr/figures/fig2_compute_pareto.png"):
-        img2 = Image("paper/jmlr/figures/fig2_compute_pareto.png", width=420, height=210)
+    if os.path.exists("artifacts/figures/fig2_compute_pareto.png"):
+        img2 = Image("artifacts/figures/fig2_compute_pareto.png", width=420, height=210)
         elements.append(img2)
         elements.append(Paragraph("Figure 2: Compute efficiency Pareto frontier comparing total training compute vs. downstream task accuracy.", caption_style))
 

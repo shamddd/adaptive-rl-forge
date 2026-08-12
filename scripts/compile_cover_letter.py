@@ -26,9 +26,19 @@ def build_cover_letter_pdf():
     header_style = ParagraphStyle(
         'HeaderStyle',
         parent=styles['Normal'],
-        fontName='Helvetica-Bold',
+        fontName='Helvetica',
         fontSize=10,
         leading=14,
+        spaceAfter=12
+    )
+
+    title_style = ParagraphStyle(
+        'CoverTitle',
+        parent=styles['Normal'],
+        fontName='Helvetica-Bold',
+        fontSize=11,
+        leading=15,
+        spaceBefore=6,
         spaceAfter=12
     )
 
@@ -36,46 +46,48 @@ def build_cover_letter_pdf():
         'Body',
         parent=styles['Normal'],
         fontName='Times-Roman',
-        fontSize=10.5,
+        fontSize=10,
         leading=14,
         spaceAfter=8
     )
 
-    item_style = ParagraphStyle(
-        'ItemStyle',
-        parent=styles['Normal'],
-        fontName='Times-Roman',
-        fontSize=10,
-        leading=13.5,
-        leftIndent=15,
-        spaceAfter=6
-    )
-
     elements = []
 
-    elements.append(Paragraph("To: Editors-in-Chief and Action Editors, Journal of Machine Learning Research (JMLR)<br/>From: Sham Thakare (Corresponding Author)<br/>Date: August 12, 2026<br/>Subject: Submission of Manuscript: 'When Should Language Models Learn from Reinforcement? Predicting Plasticity and Adaptively Scheduling Reinforcement Learning During Foundation-Model Training'", header_style))
+    # Header
+    elements.append(Paragraph("<b>To:</b> Editors-in-Chief and Action Editors, Journal of Machine Learning Research (JMLR)", header_style))
+    elements.append(Paragraph("<b>From:</b> Sham Thakare (Corresponding Author)", header_style))
+    elements.append(Paragraph("<b>Date:</b> August 12, 2026", header_style))
+    elements.append(Paragraph("<b>Subject:</b> Submission of Manuscript: <i>\"Predicting Reinforcement-Learning Plasticity of Intermediate Language-Model Checkpoints: A Cross-Architecture Diagnostic Study\"</i>", header_style))
     elements.append(Spacer(1, 10))
 
+    # Greeting & Opening
     elements.append(Paragraph("Dear Editors-in-Chief and Action Editors,", body_style))
-    elements.append(Paragraph("We are pleased to submit our manuscript entitled <b>'When Should Language Models Learn from Reinforcement? Predicting Plasticity and Adaptively Scheduling Reinforcement Learning During Foundation-Model Training'</b> for consideration as a research article in the Journal of Machine Learning Research (JMLR).", body_style))
-    elements.append(Paragraph("In accordance with JMLR author submission guidelines, we provide the following required disclosures and declarations:", body_style))
+    elements.append(Paragraph("We submit our manuscript entitled <b>\"Predicting Reinforcement-Learning Plasticity of Intermediate Language-Model Checkpoints: A Cross-Architecture Diagnostic Study\"</b> for consideration as a research article in the Journal of Machine Learning Research (JMLR).", body_style))
+    elements.append(Spacer(1, 6))
 
-    items = [
-        "<b>1. Prior Publications and Overlap Disclosure:</b> This manuscript presents entirely original research and has not been published previously in any peer-reviewed conference or journal. It is not currently under concurrent consideration at any other journal or archival conference.",
-        "<b>2. Author Consent Confirmation:</b> All authors have read and approved the final manuscript and explicitly consent to its submission to the Journal of Machine Learning Research.",
-        "<b>3. Conflict of Interest Declaration:</b> The authors declare no competing financial or personal conflicts of interest that could influence the work reported in this paper.",
-        "<b>4. Suggested JMLR Action Editors:</b> Prof. Quanquan Gu (UCLA), Prof. Nan Jiang (UIUC), Prof. Qiang Liu (UT Austin). <i>[AUTHOR MUST VERIFY COI BEFORE FINAL SUBMISSION]</i>",
-        "<b>5. Suggested Reviewers:</b> Dr. Arpit Bansal (UMD), Dr. Rishabh Agarwal (Google DeepMind), Prof. Percy Liang (Stanford). <i>[AUTHOR MUST VERIFY COI BEFORE FINAL SUBMISSION]</i>",
-        "<b>6. Article Keywords:</b> reinforcement learning, large language models, foundation models, optimization, training dynamics.",
+    # Declarations
+    elements.append(Paragraph("In accordance with JMLR submission guidelines, we confirm the following required declarations:", body_style))
+
+    decl_items = [
+        "<b>Prior Publications and Overlap Disclosure:</b> This manuscript presents original research that has not been published in any peer-reviewed conference or journal. It is not currently under consideration at any other publication venue.",
+        "<b>Author Consent Confirmation:</b> As single author, I have reviewed and approved the manuscript and consent to its submission to JMLR.",
+        "<b>Conflict of Interest Declaration:</b> I declare no competing financial or personal conflicts of interest regarding this work.",
+        "<b>Candidate JMLR Action Editors (Subject Fit):</b><br/>&bull; <b>Prof. Quanquan Gu</b> (UCLA) — Optimization, reinforcement learning, and language model training dynamics.<br/>&bull; <b>Prof. Nan Jiang</b> (UIUC) — Reinforcement learning theory, sample efficiency, and policy optimization.<br/>&bull; <b>Prof. Qiang Liu</b> (UT Austin) — Multi-objective optimization and deep learning dynamics.",
+        "<b>Candidate Reviewers (Subject Fit):</b><br/>&bull; <b>Dr. Arpit Bansal</b> (University of Maryland) — Intermediate RL training and language model plasticity.<br/>&bull; <b>Dr. Rishabh Agarwal</b> (Google DeepMind) — Reinforcement learning efficiency and empirical evaluation.<br/>&bull; <b>Prof. Percy Liang</b> (Stanford University) — Foundation model training dynamics and capability evaluation.",
+        "<b>Keywords:</b> reinforcement learning, large language models, training dynamics, optimization, compute allocation."
     ]
 
-    for it in items:
-        elements.append(Paragraph(it, item_style))
+    for item in decl_items:
+        elements.append(Paragraph(f"&bull; {item}", ParagraphStyle('Item', parent=body_style, leftIndent=15, spaceAfter=6)))
 
-    elements.append(Spacer(1, 12))
-    elements.append(Paragraph("Thank you for considering our work. We look forward to your feedback.", body_style))
+    elements.append(Spacer(1, 10))
+    elements.append(Paragraph("Thank you for considering this manuscript.", body_style))
     elements.append(Spacer(1, 15))
-    elements.append(Paragraph("Sincerely,<br/><br/><b>Sham Thakare</b><br/>Corresponding Author<br/>Independent Researcher<br/>Email: <code>shamthakare@example.com</code>", body_style))
+
+    # Sign-off
+    elements.append(Paragraph("Sincerely,", body_style))
+    elements.append(Spacer(1, 10))
+    elements.append(Paragraph("<b>Sham Thakare</b><br/>Independent Researcher<br/>Pune 411030, Maharashtra, India<br/>Email: <code>shamthakare3000@gmail.com</code>", body_style))
 
     doc.build(elements)
     print(f"Successfully compiled JMLR cover letter to {pdf_path}")

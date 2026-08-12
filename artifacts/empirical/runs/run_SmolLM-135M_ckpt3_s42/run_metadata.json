@@ -2,13 +2,13 @@
   "run_id": "run_SmolLM-135M_ckpt3_s42",
   "model_name": "HuggingFaceTB/SmolLM-135M",
   "model_revision": "main",
-  "checkpoint_hash": "375df66799e13d84",
+  "checkpoint_hash": "ab26dd949fa50d8b",
   "checkpoint_stage": 0.75,
   "seed": 42,
   "task_family": "arithmetic",
   "hardware": "mac-apple-silicon-cpu",
-  "rl_updates": 15,
+  "rl_updates": 5,
   "group_size": 4,
-  "wall_time_sec": 243.217041015625,
-  "total_tokens_generated": 1440
+  "wall_time_sec": 222.59808897972107,
+  "total_tokens_generated": 480
 }

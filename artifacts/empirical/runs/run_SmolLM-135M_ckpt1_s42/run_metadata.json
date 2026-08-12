@@ -9,6 +9,6 @@
   "hardware": "mac-apple-silicon-cpu",
   "rl_updates": 15,
   "group_size": 4,
-  "wall_time_sec": 295.2869131565094,
+  "wall_time_sec": 769.4734396934509,
   "total_tokens_generated": 1440
 }

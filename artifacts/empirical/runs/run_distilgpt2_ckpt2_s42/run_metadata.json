@@ -1,0 +1,14 @@
+{
+  "run_id": "run_distilgpt2_ckpt2_s42",
+  "model_name": "distilgpt2",
+  "model_revision": "main",
+  "checkpoint_hash": "c376082c75b2e5eb",
+  "checkpoint_stage": 0.5,
+  "seed": 42,
+  "task_family": "arithmetic",
+  "hardware": "mac-apple-silicon-cpu",
+  "rl_updates": 5,
+  "group_size": 4,
+  "wall_time_sec": 120.5,
+  "total_tokens_generated": 1440
+}

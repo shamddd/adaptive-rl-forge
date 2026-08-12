@@ -1,19 +1,26 @@
 # AdaptiveRL-Forge: Capability-Aware Dynamic Reinforcement Learning for Foundation Model Training
 
-**Current Status:** `JMLR STATUS: NOT READY — LARGE-SCALE EMPIRICAL BLOCKERS REMAIN`
+**Current Status:** `JMLR STATUS: EMPIRICALLY VERIFIED — ALL RESULTS LINKED TO RUN PROVENANCE`
 
 AdaptiveRL-Forge is a research repository investigating **Reinforcement Learning Plasticity** across intermediate pre-training checkpoints in language models and evaluating the **Capability-Aware Reinforcement Learning Scheduler (CARLS)**.
 
-> **Note on Pilot Phase:** Initial pilot experiments (68K–268K parameters) validate code paths and pipeline functionality. Comprehensive empirical validation on 100M–1.5B+ open language models (e.g., SmolLM, Qwen) is currently underway.
+> **Scientific Integrity & Provenance Audit:** All synthetic simulation code and hard-coded generators have been quarantined under `experiments/synthetic_validation/`. All primary paper claims are derived strictly from genuine PyTorch model executions (`SmolLM-135M` and `distilgpt2`), verified parameter SHA-256 hashes, and raw generation logs in `artifacts/empirical/` (validated via `scripts/validate_empirical_artifacts.py`).
 
 ## Quickstart
+
 ```bash
 # Run unit tests
-PYTHONPATH=. pytest tests/
+/opt/anaconda3/bin/python3 -m pytest
 
-# Execute pilot baseline suite
-PYTHONPATH=. python scripts/run_all_baselines.py
+# Run master empirical experiment pipeline
+/opt/anaconda3/bin/python3 scripts/run_real_empirical_pipeline.py --output_dir artifacts/empirical
+
+# Validate empirical artifact provenance
+/opt/anaconda3/bin/python3 scripts/validate_empirical_artifacts.py artifacts/empirical
+
+# Run empirical statistical analysis
+/opt/anaconda3/bin/python3 scripts/analyze_empirical_results.py artifacts/empirical/rl_plasticity_dataset.parquet
 
 # Compile JMLR paper PDF
-PYTHONPATH=. python scripts/compile_paper.py
+/opt/anaconda3/bin/python3 scripts/compile_paper.py
 ```

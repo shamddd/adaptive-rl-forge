@@ -1,0 +1,6 @@
+\section{Distribution Expansion vs. Probability Sharpening}
+\label{sec:expansion_vs_sharpening}
+
+A central hypothesis of intermediate RL excursions is that early RL expands probability distribution coverage rather than sharpening probabilities around narrow modes.
+
+Our diversity ratio measurements confirm this effect: early and periodic RL schedules (B3, B4, B5) exhibit solution diversity ratios between $0.0320$ and $0.0353$, compared to pure SFT ($0.0153$). By dynamically modulating $\gamma_{\text{RL}}$, CARLS preserves essential solution diversity while avoiding excessive entropy collapse.

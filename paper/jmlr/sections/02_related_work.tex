@@ -1,0 +1,8 @@
+\section{Related Work}
+\label{sec:related_work}
+
+\subsection{Reinforcement Learning in Language Model Training}
+Reinforcement Learning from Human Feedback (RLHF) and rule-based verifier RL (RLVR) have become standard tools for aligning language models to complex reasoning tasks \citep{huang2025reinforcement}. While traditional setups reserve RL for final post-training, recent work by \citet{bansal2026rl} explored applying RL directly to base intermediate pre-training checkpoints. Their findings show that early RL excursions can expand distribution coverage rather than merely sharpening probabilities. However, their intervention timing remains static.
+
+\subsection{Gradient Alignment and Multi-Task Optimization}
+In multi-task and multi-objective learning, gradient conflict is a primary cause of negative interference. \citet{yu2020pcgrad} introduced PCGrad to project conflicting task gradients onto orthogonal complements. In post-training alignment, \citet{zhang2025learnalign} utilized gradient alignment for data filtering, while \citet{wang2025cgpo} developed Curvature-Guided Policy Optimization to navigate multi-domain loss landscapes. CARLS builds upon these insights by employing gradient alignment as a macro-level diagnostic checkpoint signal to drive dynamic compute scheduling.

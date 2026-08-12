@@ -1,0 +1,12 @@
+\section{Problem Formulation}
+\label{sec:formulation}
+
+We consider training a language model parameter set $\theta$ under a total compute budget $C$. At any training step $t$, compute can be allocated across three objective functions: Next-Token Prediction ($\mathcal{L}_{\text{NTP}}$), Supervised Fine-Tuning ($\mathcal{L}_{\text{SFT}}$), and Policy Gradient Reinforcement Learning ($\mathcal{L}_{\text{RL}}$).
+
+The overall training objective at step $t$ is formulated as a dynamic convex combination:
+\begin{equation}
+    \mathcal{L}(t; \theta) = \alpha(t) \mathcal{L}_{\text{NTP}}(\theta) + \beta(t) \mathcal{L}_{\text{SFT}}(\theta) + \gamma(t) \mathcal{L}_{\text{RL}}(\theta)
+\end{equation}
+subject to the constraint $\alpha(t) + \beta(t) + \gamma(t) = 1.0$, with $\alpha(t), \beta(t), \gamma(t) \ge 0$.
+
+The goal of the dynamic scheduler is to choose tuple $(\alpha(t), \beta(t), \gamma(t))$ at each step $t$ to maximize downstream capability accuracy subject to compute constraints.

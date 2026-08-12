@@ -1,0 +1,16 @@
+\section{Experimental Protocol}
+\label{sec:experimental_protocol}
+
+We evaluate CARLS against seven competitive baseline training schedules across 3 random seeds per configuration:
+\begin{itemize}
+    \item \textbf{B0 (NTP Only):} Pure self-supervised pre-training.
+    \item \textbf{B1 (SFT Only):} Pure supervised fine-tuning.
+    \item \textbf{B2 (Sequential Pipeline):} NTP $\rightarrow$ SFT $\rightarrow$ RL sequential pipeline.
+    \item \textbf{B3 (Early RL Excursion):} Single RL excursion applied at early pre-training.
+    \item \textbf{B4 (Periodic RL Excursions):} Fixed-interval RL excursions.
+    \item \textbf{B5 (Random RL Timing):} Randomly timed RL excursions.
+    \item \textbf{B6 (Fixed Objective Mixture):} Static parallel mixture ($\alpha=0.5, \beta=0.2, \gamma=0.3$).
+    \item \textbf{B7 (CARLS - Ours):} Dynamic readiness-based compute allocation.
+\end{itemize}
+
+All experiments track total processed tokens, exact floating-point operations (FLOPs), wall-clock execution time, Pass@1, Pass@4, and solution diversity ratios.

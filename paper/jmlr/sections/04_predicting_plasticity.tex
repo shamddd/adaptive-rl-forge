@@ -1,0 +1,14 @@
+\section{Predicting Reinforcement-Learning Plasticity}
+\label{sec:predicting_plasticity}
+
+To determine when a model checkpoint is ready for RL, we extract three key diagnostic readiness signals prior to initiating an RL excursion:
+\begin{enumerate}
+    \item \textbf{Gradient Alignment ($\cos(\mathbf{g}_{\text{NTP}}, \mathbf{g}_{\text{RL}})$):} Measured as the cosine similarity between the unclipped parameter gradients of the pre-training NTP loss and the policy gradient loss:
+    \begin{equation}
+        \text{Sim}_{\text{grad}} = \frac{\langle \nabla_\theta \mathcal{L}_{\text{NTP}}, \nabla_\theta \mathcal{L}_{\text{RL}} \rangle}{\|\nabla_\theta \mathcal{L}_{\text{NTP}}\| \|\nabla_\theta \mathcal{L}_{\text{RL}}\|}
+    \end{equation}
+    \item \textbf{Policy Entropy ($H(\pi_\theta)$):} The average token-level entropy of the policy output distribution over reasoning prompts.
+    \item \textbf{Baseline Pass@k Accuracy:} The pre-RL task accuracy evaluating whether the checkpoint possesses minimal foundational skills.
+\end{enumerate}
+
+Our empirical plasticity study demonstrates that high gradient alignment combined with non-collapsed policy entropy strongly correlates with subsequent RL accuracy gain.

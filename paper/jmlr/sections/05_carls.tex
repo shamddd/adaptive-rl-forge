@@ -1,0 +1,11 @@
+\section{CARLS: Capability-Aware Reinforcement Learning Scheduler}
+\label{sec:carls}
+
+CARLS operates as an adaptive feedback controller during model training. Every $K$ steps, CARLS samples diagnostic batches to measure current checkpoint readiness signals.
+
+The controller computes a predicted plasticity score $\hat{S}_{\text{plastic}}$:
+\begin{equation}
+    \hat{S}_{\text{plastic}} = w_1 \cdot \text{Sim}_{\text{grad}} + w_2 \cdot \left(\frac{H(\pi_\theta)}{H_{\text{max}}}\right) - w_3 \cdot \text{Pass}@k
+\end{equation}
+
+When $\hat{S}_{\text{plastic}}$ exceeds a pre-defined readiness threshold, CARLS allocates a high RL proportion ($\gamma \in [0.4, 0.8]$), triggering a targeted RL excursion. If gradient alignment is negative or entropy is collapsed, CARLS decreases $\gamma$ and increases $\alpha_{\text{NTP}}$ and $\beta_{\text{SFT}}$ to restore structural representation stability.

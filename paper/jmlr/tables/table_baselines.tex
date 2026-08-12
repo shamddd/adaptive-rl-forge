@@ -1,0 +1,19 @@
+\begin{table}[h]
+\centering
+\caption{Compute-Normalized Performance & Solution Diversity across Baselines (Mean $\pm$ 95\% Bootstrap CI across 3 Seeds).}
+\label{tab:baselines}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Baseline} & \textbf{Pass@1 (\%)} & \textbf{Pass@4 (\%)} & \textbf{Diversity Ratio} & \textbf{FLOPs ($\times 10^{10}$)} \\
+\hline
+B0: NTP Only & 0.00 [0.0, 0.0] & 0.33 [0.2, 0.4] & 0.0220 & 9.84 \\
+B1: SFT Only & 1.67 [1.6, 1.8] & 3.20 [2.6, 4.0] & 0.0153 & 2.12 \\
+B2: Sequential Pipeline & 0.33 [0.0, 1.0] & 0.93 [0.4, 1.6] & 0.0247 & 7.28 \\
+B3: Early RL Excursion & 0.20 [0.0, 0.6] & 0.33 [0.2, 0.6] & 0.0327 & 7.40 \\
+B4: Periodic RL Excursions & 0.60 [0.0, 1.2] & 0.80 [0.6, 1.0] & 0.0320 & 7.40 \\
+B5: Random RL Timing & 0.87 [0.0, 1.6] & 1.07 [0.6, 1.4] & 0.0353 & 6.96 \\
+B6: Fixed Objective Mixture & 0.47 [0.0, 1.0] & 1.07 [0.4, 1.8] & 0.0193 & 6.70 \\
+\textbf{B7: CARLS (Ours)} & \textbf{0.80} [0.0, 1.6] & \textbf{0.60} [0.4, 0.8] & \textbf{0.0153} & \textbf{6.20} \\
+\hline
+\end{tabular}
+\end{table}

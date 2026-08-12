@@ -1,0 +1,8 @@
+\section{Limitations}
+\label{sec:limitations}
+
+While our empirical findings validate the core mechanics of capability-aware scheduling, several limitations warrant note:
+\begin{enumerate}
+    \item \textbf{Model Scale:} Experiments were conducted on lightweight language model architectures (up to 4-layer Transformers) to allow multi-seed reproducibility. Scaling CARLS to multi-billion parameter LLMs remains an important future direction.
+    \item \textbf{Signal Evaluation Overhead:} Computing exact gradient alignment requires backpropagating both NTP and RL batches, adding compute overhead per diagnostic evaluation step.
+\end{enumerate}

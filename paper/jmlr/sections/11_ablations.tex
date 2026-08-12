@@ -1,0 +1,9 @@
+\section{Ablation Studies}
+\label{sec:ablations}
+
+We conduct ablation experiments removing individual readiness signals from CARLS:
+\begin{itemize}
+    \item \textbf{w/o Gradient Alignment:} Removing $\text{Sim}_{\text{grad}}$ causes CARLS to trigger RL excursions during periods of severe gradient conflict, increasing variance.
+    \item \textbf{w/o Policy Entropy:} Removing entropy monitoring leads to premature entropy collapse.
+    \item \textbf{Fixed Schedule (B6 vs B7):} Replacing CARLS dynamic control with a fixed mixture ratio reduces overall compute efficiency.
+\end{itemize}

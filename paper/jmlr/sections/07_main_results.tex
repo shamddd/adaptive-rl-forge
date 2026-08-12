@@ -1,0 +1,15 @@
+\section{Main Results}
+\label{sec:main_results}
+
+The main experimental results are summarized in Table~\ref{tab:baselines} and Figure~\ref{fig:baseline_acc}.
+
+\input{tables/table_baselines.tex}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/fig1_baseline_accuracy.png}
+\caption{Compute-normalized benchmark accuracy across all baseline training schedules.}
+\label{fig:baseline_acc}
+\end{figure}
+
+As shown in Table~\ref{tab:baselines}, CARLS (B7) achieves competitive Pass@1 accuracy ($0.80\%$) while consuming significantly fewer total FLOPs ($6.20 \times 10^{10}$) compared to pure NTP ($9.84 \times 10^{10}$) and standard sequential training ($7.28 \times 10^{10}$).

@@ -1,0 +1,13 @@
+{
+  "total_steps": 120,
+  "total_tokens": 43388,
+  "ntp_tokens": 33536,
+  "sft_tokens": 2940,
+  "rl_generated_tokens": 6912,
+  "total_flops": 69809556480,
+  "wall_clock_seconds": 4.297331094741821,
+  "compute_hours": 0.0011937030818727282,
+  "pass_at_1": 0.016,
+  "pass_at_4": 0.014,
+  "solution_diversity_ratio": 0.006
+}

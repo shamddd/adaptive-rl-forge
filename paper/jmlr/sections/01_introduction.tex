@@ -1,0 +1,16 @@
+\section{Introduction}
+\label{sec:intro}
+
+The training pipeline of modern foundation models is traditionally partitioned into distinct sequential phases: self-supervised Next-Token Prediction (NTP) pre-training over large text corpora, followed by Supervised Fine-Tuning (SFT), and ending with Reinforcement Learning (RL) alignment \citep{bansal2026rl, huang2025reinforcement}. While this pipeline has yielded remarkable advances, applying RL strictly as a post-training stage introduces fundamental bottlenecks: late-stage RL primarily serves to "sharpen" probability distributions around high-reward modes, potentially compressing policy entropy and constraining language plasticity.
+
+Recent studies demonstrate that introducing RL early or at intermediate pre-training checkpoints—termed "RL excursions"—can broaden output distribution coverage and foster diverse solution strategies \citep{bansal2026rl}. However, existing methods employ static or heuristic intervention timing, applying RL at pre-determined step intervals irrespective of whether the model checkpoint currently possesses the internal representations needed to profit from policy optimization.
+
+In this work, we formulate the dynamic scheduling of reinforcement learning as a continuous feedback-control problem driven by checkpoint readiness signals. We ask four primary research questions:
+\begin{enumerate}
+    \item Which measurable properties of intermediate language-model checkpoints predict subsequent reinforcement-learning improvement?
+    \item Can those properties distinguish between capability expansion, sharpening, stagnation, and interference?
+    \item How can an adaptive training scheduler exploit these signals to allocate compute dynamically among NTP, SFT, and RL?
+    \item Does adaptive scheduling improve compute-normalized performance compared to fixed baseline schedules?
+\end{enumerate}
+
+To answer these questions, we perform a systematic empirical checkpoint plasticity study and introduce the \textbf{Capability-Aware Reinforcement Learning Scheduler (CARLS)}. CARLS evaluates real-time readiness indicators—most notably the gradient alignment between NTP pre-training loss and reward-driven policy gradients $\cos(\mathbf{g}_{\text{NTP}}, \mathbf{g}_{\text{RL}})$, policy entropy, and baseline pass@k accuracy—to dynamically adjust resource allocation among training objectives.

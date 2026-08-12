@@ -1,0 +1,5 @@
+baseline: B7_CARLS
+seed: 43
+total_steps: 120
+model_num_params: 268160
+model_scale: default

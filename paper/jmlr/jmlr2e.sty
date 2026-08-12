@@ -1,0 +1,64 @@
+% jmlr2e.sty - Official JMLR LaTeX Style Package
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jmlr2e}[2020/01/29 v1.2 JMLR Paper Style]
+
+\RequirePackage{epsfig}
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{natbib}
+\RequirePackage{graphicx}
+\RequirePackage{url}
+
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\headheight}{0.2in}
+\setlength{\headsep}{0.3in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\evensidemargin}{0.0in}
+\setlength{\parindent}{0.2in}
+\setlength{\parskip}{0.05in}
+
+\newcommand{\HeadingHeading}[1]{\gdef\@HeadingHeading{#1}}
+\newcommand{\HeadingAuthors}[1]{\gdef\@HeadingAuthors{#1}}
+
+\def\maketitle{\par
+ \begingroup
+   \def\thefootnote{\fnsymbol{footnote}}
+   \def\@makefnmark{\hbox to 0pt{$^{\@thefnmark}$\hss}}
+   \if@twocolumn
+     \twocolumn[\@maketitle]
+   \else
+     \newpage
+     \global\@topnum\z@
+     \@maketitle
+   \fi
+   \thispagestyle{plain}\@thanks
+ \endgroup
+ \setcounter{footnote}{0}
+ \let\maketitle\relax\let\@maketitle\relax
+ \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\thanks\relax}
+
+\def\@maketitle{\newpage
+ \null
+ \vskip 0.1in
+ \begin{center}
+  {\LARGE \bf \@title \par}
+  \vskip 1.5em
+  {\large \lineskip .5em
+   \begin{tabular}[t]{c}\@author
+   \end{tabular}\par}
+ \end{center}
+ \par
+ \vskip 1.5em}
+
+\def\abstract{\subsect*{Abstract}\small}
+\def\endabstract{\par\normalsize}
+
+\def\keywords#1{\vspace{0.5em}\noindent{\bf Keywords:} #1}
+
+\endinput

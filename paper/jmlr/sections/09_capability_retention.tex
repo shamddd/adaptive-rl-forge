@@ -1,0 +1,6 @@
+\section{Capability Retention and Forgetting}
+\label{sec:retention}
+
+Applying aggressive RL during pre-training carries the risk of catastrophic forgetting on general pre-training text distribution.
+
+Because CARLS continuously monitors gradient alignment and maintains non-zero $\alpha_{\text{NTP}}$ baseline allocation, pre-training loss remains stable, avoiding the sharp pre-training perplexity degradation observed during unconstrained RL excursions.

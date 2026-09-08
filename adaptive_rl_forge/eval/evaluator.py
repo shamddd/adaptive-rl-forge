@@ -62,3 +62,79 @@ def evaluate_model_capabilities(
         "pass_at_4": pass4_acc,
         "solution_diversity_ratio": diversity_ratio,
     }
+
+
+def compute_expected_calibration_error(
+    confidences: List[float],
+    correctness: List[int],
+    num_bins: int = 10,
+) -> Dict[str, float]:
+    """
+    Computes Expected Calibration Error (ECE) and Brier score.
+    """
+    if not confidences or len(confidences) != len(correctness):
+        return {"ece": 0.0, "brier_score": 0.0}
+
+    N = len(confidences)
+    brier_score = sum((c - y) ** 2 for c, y in zip(confidences, correctness)) / float(N)
+
+    bin_boundaries = [i / float(num_bins) for i in range(num_bins + 1)]
+    ece = 0.0
+
+    for i in range(num_bins):
+        bin_lower = bin_boundaries[i]
+        bin_upper = bin_boundaries[i + 1]
+
+        in_bin = [
+            (c, y)
+            for c, y in zip(confidences, correctness)
+            if bin_lower < c <= bin_upper or (i == 0 and c == bin_lower)
+        ]
+
+        if in_bin:
+            bin_size = len(in_bin)
+            bin_acc = sum(y for _, y in in_bin) / float(bin_size)
+            bin_conf = sum(c for c, _ in in_bin) / float(bin_size)
+            ece += (bin_size / float(N)) * abs(bin_acc - bin_conf)
+
+    return {
+        "ece": ece,
+        "brier_score": brier_score,
+    }
+
+
+def evaluate_model_calibration(
+    model: torch.nn.Module,
+    eval_dataloader: Any,
+    verifier: ExactMatchRewardVerifier,
+    device: torch.device,
+) -> Dict[str, float]:
+    """
+    Evaluates ECE and Brier score by measuring sequence probability confidence vs correctness.
+    """
+    model.eval()
+    all_confidences = []
+    all_correctness = []
+
+    with torch.no_grad():
+        for batch in eval_dataloader:
+            prompt_ids = batch["prompt_ids"].to(device)
+            answer_tokens = batch["answer_tokens"].to(device)
+            B, P = prompt_ids.size()
+
+            completed = model.generate(prompt_ids, max_new_tokens=4, temperature=0.1)
+            rewards, is_correct = verifier.compute_rewards(completed, [P] * B, answer_tokens)
+
+            logits, _ = model(completed)
+            gen_logits = logits[:, P - 1 : -1, :]
+            gen_tokens = completed[:, P:]
+
+            log_probs = torch.nn.functional.log_softmax(gen_logits, dim=-1)
+            token_log_probs = torch.gather(log_probs, 2, gen_tokens.unsqueeze(-1)).squeeze(-1)
+            seq_probs = torch.exp(token_log_probs.mean(dim=1)).cpu().tolist()
+
+            all_confidences.extend(seq_probs)
+            all_correctness.extend(is_correct)
+
+    return compute_expected_calibration_error(all_confidences, all_correctness)
+

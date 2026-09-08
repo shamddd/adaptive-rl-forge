@@ -1,0 +1,1843 @@
+{
+  "metadata": {
+    "model_lineage": "Qwen2.5-Math-1.5B Matched Pair (Design A)",
+    "n_prompts": 100,
+    "k_rollouts": 8,
+    "temperature": 0.7,
+    "capability_gate_passed": true,
+    "outcome_category": "Outcome A: Accuracy and calibration improved together (Hypothesis Rejected)",
+    "verdict": "STOP"
+  },
+  "pre_metrics": {
+    "accuracy": 0.12,
+    "mean_s_ans": 0.84625,
+    "mean_j_path": 0.6897636054421769,
+    "aurc": 0.891006009175899,
+    "brier_score": 0.67859375,
+    "ece": 0.73625,
+    "auroc": 0.5,
+    "high_agreement_error_rate": 0.76
+  },
+  "post_metrics": {
+    "accuracy": 0.22,
+    "mean_s_ans": 0.7025,
+    "mean_j_path": 0.21213945578231294,
+    "aurc": 0.7915085264528033,
+    "brier_score": 0.453125,
+    "ece": 0.4825,
+    "auroc": 0.5,
+    "high_agreement_error_rate": 0.44
+  },
+  "deltas": {
+    "accuracy_delta": 0.1,
+    "auroc_delta": 0.0,
+    "brier_delta": -0.22546875,
+    "aurc_delta": -0.09949748272309566,
+    "jaccard_delta": -0.4776241496598639,
+    "p_value_t": 6.578446061304372e-09
+  },
+  "pre_results": [
+    {
+      "problem_id": 0,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.6172619047619048,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 1,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 2,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.75,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 23
+    },
+    {
+      "problem_id": 3,
+      "s_ans": 0.375,
+      "is_correct": 0,
+      "j_path": 0.3523809523809524,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 23
+    },
+    {
+      "problem_id": 4,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.7142857142857143,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 5,
+      "s_ans": 0.25,
+      "is_correct": 0,
+      "j_path": 0.42857142857142855,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 6,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 21
+    },
+    {
+      "problem_id": 7,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.5714285714285714,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 8,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.5583333333333333,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 9,
+      "s_ans": 0.875,
+      "is_correct": 1,
+      "j_path": 0.6321428571428571,
+      "mean_length": 5.0,
+      "modal_ans": 24,
+      "target_ans": 24
+    },
+    {
+      "problem_id": 10,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.47916666666666663,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 11,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.7232142857142857,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 12,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.5166666666666667,
+      "mean_length": 5.0,
+      "modal_ans": 25,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 13,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.6690476190476191,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 14,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 15,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.6785714285714286,
+      "mean_length": 4.875,
+      "modal_ans": 907,
+      "target_ans": 904
+    },
+    {
+      "problem_id": 16,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.7916666666666667,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 904
+    },
+    {
+      "problem_id": 17,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.9166666666666667,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 18,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 19,
+      "s_ans": 1.0,
+      "is_correct": 1,
+      "j_path": 0.7142857142857143,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 20,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.5232993197278911,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 908
+    },
+    {
+      "problem_id": 21,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.7291666666666667,
+      "mean_length": 4.75,
+      "modal_ans": 25,
+      "target_ans": 28
+    },
+    {
+      "problem_id": 22,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.48095238095238096,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 23,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.5488095238095239,
+      "mean_length": 5.0,
+      "modal_ans": 12,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 24,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.5369047619047619,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 25,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.9166666666666667,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 26,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.5416666666666666,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 27,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.8333333333333333,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 19
+    },
+    {
+      "problem_id": 28,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.875,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 29,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.6428571428571429,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 30,
+      "s_ans": 1.0,
+      "is_correct": 1,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 25,
+      "target_ans": 25
+    },
+    {
+      "problem_id": 31,
+      "s_ans": 0.25,
+      "is_correct": 0,
+      "j_path": 0.3964285714285714,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 32,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.44821428571428573,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 33,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.34285714285714286,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 34,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.8333333333333333,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 35,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.4529761904761905,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 906
+    },
+    {
+      "problem_id": 36,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.7083333333333333,
+      "mean_length": 4.875,
+      "modal_ans": 19,
+      "target_ans": 21
+    },
+    {
+      "problem_id": 37,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.7232142857142857,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 38,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.36607142857142855,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 39,
+      "s_ans": 0.875,
+      "is_correct": 1,
+      "j_path": 0.8333333333333333,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 907
+    },
+    {
+      "problem_id": 40,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 41,
+      "s_ans": 1.0,
+      "is_correct": 1,
+      "j_path": 0.7142857142857143,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 42,
+      "s_ans": 0.75,
+      "is_correct": 1,
+      "j_path": 0.49523809523809526,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 17
+    },
+    {
+      "problem_id": 43,
+      "s_ans": 1.0,
+      "is_correct": 1,
+      "j_path": 0.7678571428571429,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 907
+    },
+    {
+      "problem_id": 44,
+      "s_ans": 0.75,
+      "is_correct": 1,
+      "j_path": 0.7619047619047619,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 45,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.7619047619047619,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 24
+    },
+    {
+      "problem_id": 46,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 19
+    },
+    {
+      "problem_id": 47,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 23
+    },
+    {
+      "problem_id": 48,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.36904761904761907,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 12
+    },
+    {
+      "problem_id": 49,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.5625,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 50,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.7619047619047619,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 51,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.7589285714285714,
+      "mean_length": 5.0,
+      "modal_ans": 12,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 52,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.4232142857142857,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 53,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 54,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 15
+    },
+    {
+      "problem_id": 55,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.49047619047619045,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 56,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.7107142857142856,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 57,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.45918367346938777,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 58,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.5625,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 59,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.875,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 60,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 19
+    },
+    {
+      "problem_id": 61,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.6636904761904762,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 62,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 21
+    },
+    {
+      "problem_id": 63,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 19
+    },
+    {
+      "problem_id": 64,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.7380952380952381,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 65,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.875,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 66,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.5134353741496599,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 67,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.875,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 24
+    },
+    {
+      "problem_id": 68,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 69,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.3217687074829932,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 70,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.6380952380952382,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 905
+    },
+    {
+      "problem_id": 71,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.36666666666666664,
+      "mean_length": 4.875,
+      "modal_ans": 25,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 72,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.7589285714285714,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 73,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.875,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 908
+    },
+    {
+      "problem_id": 74,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.6071428571428571,
+      "mean_length": 5.0,
+      "modal_ans": 25,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 75,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.4880952380952381,
+      "mean_length": 5.0,
+      "modal_ans": 12,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 76,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.5833333333333333,
+      "mean_length": 4.5,
+      "modal_ans": 25,
+      "target_ans": 28
+    },
+    {
+      "problem_id": 77,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.13010204081632654,
+      "mean_length": 5.0,
+      "modal_ans": 25,
+      "target_ans": 27
+    },
+    {
+      "problem_id": 78,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 23
+    },
+    {
+      "problem_id": 79,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.8125,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 904
+    },
+    {
+      "problem_id": 80,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.7321428571428571,
+      "mean_length": 4.375,
+      "modal_ans": 25,
+      "target_ans": 29
+    },
+    {
+      "problem_id": 81,
+      "s_ans": 0.25,
+      "is_correct": 1,
+      "j_path": 0.4047619047619047,
+      "mean_length": 5.0,
+      "modal_ans": 25,
+      "target_ans": 25
+    },
+    {
+      "problem_id": 82,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.6166666666666666,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 905
+    },
+    {
+      "problem_id": 83,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.30416666666666664,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 15
+    },
+    {
+      "problem_id": 84,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.43809523809523804,
+      "mean_length": 5.0,
+      "modal_ans": 24,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 85,
+      "s_ans": 0.375,
+      "is_correct": 1,
+      "j_path": 0.36726190476190473,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 86,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.7488095238095237,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 87,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.9166666666666667,
+      "mean_length": 5.0,
+      "modal_ans": 12,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 88,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.75,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 89,
+      "s_ans": 0.75,
+      "is_correct": 1,
+      "j_path": 0.6488095238095238,
+      "mean_length": 5.0,
+      "modal_ans": 25,
+      "target_ans": 25
+    },
+    {
+      "problem_id": 90,
+      "s_ans": 1.0,
+      "is_correct": 1,
+      "j_path": 0.8333333333333333,
+      "mean_length": 4.875,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 91,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.875,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 92,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.625,
+      "mean_length": 5.0,
+      "modal_ans": 25,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 93,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 94,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.5232142857142857,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 12
+    },
+    {
+      "problem_id": 95,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 96,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.8392857142857143,
+      "mean_length": 5.0,
+      "modal_ans": 907,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 97,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.30238095238095236,
+      "mean_length": 5.0,
+      "modal_ans": 25,
+      "target_ans": 27
+    },
+    {
+      "problem_id": 98,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 1.0,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 21
+    },
+    {
+      "problem_id": 99,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.48214285714285715,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 13
+    }
+  ],
+  "post_results": [
+    {
+      "problem_id": 0,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.1244047619047619,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 1,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.2369047619047619,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 2,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.1636904761904762,
+      "mean_length": 4.625,
+      "modal_ans": 18,
+      "target_ans": 23
+    },
+    {
+      "problem_id": 3,
+      "s_ans": 0.375,
+      "is_correct": 0,
+      "j_path": 0.052210884353741494,
+      "mean_length": 4.875,
+      "modal_ans": 27,
+      "target_ans": 23
+    },
+    {
+      "problem_id": 4,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.333078231292517,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 5,
+      "s_ans": 0.375,
+      "is_correct": 0,
+      "j_path": 0.06156462585034013,
+      "mean_length": 4.875,
+      "modal_ans": 17,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 6,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.36904761904761907,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 21
+    },
+    {
+      "problem_id": 7,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.18494897959183673,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 8,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.4261904761904762,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 9,
+      "s_ans": 0.5,
+      "is_correct": 1,
+      "j_path": 0.023809523809523808,
+      "mean_length": 4.625,
+      "modal_ans": 24,
+      "target_ans": 24
+    },
+    {
+      "problem_id": 10,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.1880952380952381,
+      "mean_length": 5.0,
+      "modal_ans": 10,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 11,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.16785714285714287,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 12,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.14447278911564626,
+      "mean_length": 4.875,
+      "modal_ans": 27,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 13,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.15042517006802722,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 14,
+      "s_ans": 0.25,
+      "is_correct": 0,
+      "j_path": 0.1886904761904762,
+      "mean_length": 5.0,
+      "modal_ans": 11,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 15,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.07653061224489796,
+      "mean_length": 4.75,
+      "modal_ans": 909,
+      "target_ans": 904
+    },
+    {
+      "problem_id": 16,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.19345238095238096,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 904
+    },
+    {
+      "problem_id": 17,
+      "s_ans": 0.875,
+      "is_correct": 1,
+      "j_path": 0.225,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 18,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.35034013605442177,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 19,
+      "s_ans": 1.0,
+      "is_correct": 1,
+      "j_path": 0.2095238095238095,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 20,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.19999999999999998,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 908
+    },
+    {
+      "problem_id": 21,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.5071428571428571,
+      "mean_length": 4.375,
+      "modal_ans": 27,
+      "target_ans": 28
+    },
+    {
+      "problem_id": 22,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.10416666666666666,
+      "mean_length": 4.625,
+      "modal_ans": 17,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 23,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.14430272108843537,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 24,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.08341836734693878,
+      "mean_length": 5.0,
+      "modal_ans": 19,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 25,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.061309523809523814,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 26,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.09081632653061224,
+      "mean_length": 4.875,
+      "modal_ans": 19,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 27,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.31071428571428567,
+      "mean_length": 4.875,
+      "modal_ans": 18,
+      "target_ans": 19
+    },
+    {
+      "problem_id": 28,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.06377551020408163,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 29,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.14829931972789118,
+      "mean_length": 4.875,
+      "modal_ans": 19,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 30,
+      "s_ans": 0.5,
+      "is_correct": 1,
+      "j_path": 0.21428571428571427,
+      "mean_length": 4.75,
+      "modal_ans": 25,
+      "target_ans": 25
+    },
+    {
+      "problem_id": 31,
+      "s_ans": 0.25,
+      "is_correct": 0,
+      "j_path": 0.05017006802721088,
+      "mean_length": 5.0,
+      "modal_ans": 12,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 32,
+      "s_ans": 0.75,
+      "is_correct": 1,
+      "j_path": 0.12474489795918367,
+      "mean_length": 4.625,
+      "modal_ans": 10,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 33,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.12653061224489795,
+      "mean_length": 4.875,
+      "modal_ans": 909,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 34,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.11369047619047619,
+      "mean_length": 5.0,
+      "modal_ans": 14,
+      "target_ans": 11
+    },
+    {
+      "problem_id": 35,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.2857142857142857,
+      "mean_length": 4.875,
+      "modal_ans": 909,
+      "target_ans": 906
+    },
+    {
+      "problem_id": 36,
+      "s_ans": 0.375,
+      "is_correct": 0,
+      "j_path": 0.16071428571428573,
+      "mean_length": 4.75,
+      "modal_ans": 19,
+      "target_ans": 21
+    },
+    {
+      "problem_id": 37,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.1279761904761905,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 38,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.09999999999999999,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 39,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.20833333333333331,
+      "mean_length": 4.875,
+      "modal_ans": 909,
+      "target_ans": 907
+    },
+    {
+      "problem_id": 40,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.34226190476190477,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 41,
+      "s_ans": 1.0,
+      "is_correct": 1,
+      "j_path": 0.29081632653061223,
+      "mean_length": 4.875,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 42,
+      "s_ans": 0.625,
+      "is_correct": 1,
+      "j_path": 0.11190476190476191,
+      "mean_length": 4.875,
+      "modal_ans": 17,
+      "target_ans": 17
+    },
+    {
+      "problem_id": 43,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.12091836734693877,
+      "mean_length": 5.0,
+      "modal_ans": 10,
+      "target_ans": 907
+    },
+    {
+      "problem_id": 44,
+      "s_ans": 0.625,
+      "is_correct": 1,
+      "j_path": 0.2261904761904762,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 45,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.2285714285714286,
+      "mean_length": 4.875,
+      "modal_ans": 19,
+      "target_ans": 24
+    },
+    {
+      "problem_id": 46,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.1869047619047619,
+      "mean_length": 4.75,
+      "modal_ans": 18,
+      "target_ans": 19
+    },
+    {
+      "problem_id": 47,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.4875,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 23
+    },
+    {
+      "problem_id": 48,
+      "s_ans": 0.375,
+      "is_correct": 1,
+      "j_path": 0.03401360544217687,
+      "mean_length": 4.875,
+      "modal_ans": 12,
+      "target_ans": 12
+    },
+    {
+      "problem_id": 49,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.1738095238095238,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 50,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.1732142857142857,
+      "mean_length": 5.0,
+      "modal_ans": 14,
+      "target_ans": 13
+    },
+    {
+      "problem_id": 51,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.1976190476190476,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 52,
+      "s_ans": 0.375,
+      "is_correct": 0,
+      "j_path": 0.1602891156462585,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 53,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.29464285714285715,
+      "mean_length": 4.875,
+      "modal_ans": 18,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 54,
+      "s_ans": 0.375,
+      "is_correct": 0,
+      "j_path": 0.07916666666666668,
+      "mean_length": 4.75,
+      "modal_ans": 11,
+      "target_ans": 15
+    },
+    {
+      "problem_id": 55,
+      "s_ans": 0.5,
+      "is_correct": 1,
+      "j_path": 0.25,
+      "mean_length": 5.0,
+      "modal_ans": 10,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 56,
+      "s_ans": 0.875,
+      "is_correct": 1,
+      "j_path": 0.34158163265306124,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 57,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.2928571428571428,
+      "mean_length": 4.625,
+      "modal_ans": 10,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 58,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.3773809523809524,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 59,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.3964285714285714,
+      "mean_length": 5.0,
+      "modal_ans": 27,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 60,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.38367346938775515,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 19
+    },
+    {
+      "problem_id": 61,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.2642857142857143,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 62,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.5327380952380952,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 21
+    },
+    {
+      "problem_id": 63,
+      "s_ans": 0.625,
+      "is_correct": 1,
+      "j_path": 0.41666666666666663,
+      "mean_length": 5.0,
+      "modal_ans": 19,
+      "target_ans": 19
+    },
+    {
+      "problem_id": 64,
+      "s_ans": 0.75,
+      "is_correct": 1,
+      "j_path": 0.13477891156462585,
+      "mean_length": 5.0,
+      "modal_ans": 14,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 65,
+      "s_ans": 0.25,
+      "is_correct": 0,
+      "j_path": 0.06105442176870748,
+      "mean_length": 5.0,
+      "modal_ans": 11,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 66,
+      "s_ans": 0.75,
+      "is_correct": 1,
+      "j_path": 0.05748299319727891,
+      "mean_length": 4.625,
+      "modal_ans": 10,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 67,
+      "s_ans": 0.375,
+      "is_correct": 0,
+      "j_path": 0.28035714285714286,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 24
+    },
+    {
+      "problem_id": 68,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.47916666666666663,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 69,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.10612244897959185,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 70,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.30773809523809526,
+      "mean_length": 5.0,
+      "modal_ans": 10,
+      "target_ans": 905
+    },
+    {
+      "problem_id": 71,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.17627551020408164,
+      "mean_length": 4.75,
+      "modal_ans": 27,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 72,
+      "s_ans": 0.625,
+      "is_correct": 1,
+      "j_path": 0.4523809523809524,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 73,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.15756802721088436,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 908
+    },
+    {
+      "problem_id": 74,
+      "s_ans": 0.25,
+      "is_correct": 1,
+      "j_path": 0.0625,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 75,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.0988095238095238,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 76,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.31428571428571433,
+      "mean_length": 4.25,
+      "modal_ans": 27,
+      "target_ans": 28
+    },
+    {
+      "problem_id": 77,
+      "s_ans": 1.0,
+      "is_correct": 1,
+      "j_path": 0.16938775510204082,
+      "mean_length": 4.625,
+      "modal_ans": 27,
+      "target_ans": 27
+    },
+    {
+      "problem_id": 78,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.04795918367346939,
+      "mean_length": 4.875,
+      "modal_ans": 19,
+      "target_ans": 23
+    },
+    {
+      "problem_id": 79,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.10238095238095238,
+      "mean_length": 4.625,
+      "modal_ans": 909,
+      "target_ans": 904
+    },
+    {
+      "problem_id": 80,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.2791666666666667,
+      "mean_length": 4.375,
+      "modal_ans": 27,
+      "target_ans": 29
+    },
+    {
+      "problem_id": 81,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.13137755102040816,
+      "mean_length": 4.75,
+      "modal_ans": 27,
+      "target_ans": 25
+    },
+    {
+      "problem_id": 82,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.33877551020408164,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 905
+    },
+    {
+      "problem_id": 83,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.08996598639455781,
+      "mean_length": 5.0,
+      "modal_ans": 17,
+      "target_ans": 15
+    },
+    {
+      "problem_id": 84,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.33843537414965985,
+      "mean_length": 4.75,
+      "modal_ans": 27,
+      "target_ans": 20
+    },
+    {
+      "problem_id": 85,
+      "s_ans": 0.25,
+      "is_correct": 0,
+      "j_path": 0.21938775510204084,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 86,
+      "s_ans": 0.625,
+      "is_correct": 1,
+      "j_path": 0.1604591836734694,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 87,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.28630952380952385,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 10
+    },
+    {
+      "problem_id": 88,
+      "s_ans": 0.875,
+      "is_correct": 1,
+      "j_path": 0.2654761904761905,
+      "mean_length": 5.0,
+      "modal_ans": 909,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 89,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.24353741496598638,
+      "mean_length": 4.75,
+      "modal_ans": 27,
+      "target_ans": 25
+    },
+    {
+      "problem_id": 90,
+      "s_ans": 0.75,
+      "is_correct": 1,
+      "j_path": 0.2571428571428572,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 91,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.5607142857142857,
+      "mean_length": 5.0,
+      "modal_ans": 27,
+      "target_ans": 22
+    },
+    {
+      "problem_id": 92,
+      "s_ans": 0.5,
+      "is_correct": 1,
+      "j_path": 0.07559523809523809,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 18
+    },
+    {
+      "problem_id": 93,
+      "s_ans": 0.75,
+      "is_correct": 0,
+      "j_path": 0.125,
+      "mean_length": 4.875,
+      "modal_ans": 18,
+      "target_ans": 14
+    },
+    {
+      "problem_id": 94,
+      "s_ans": 0.625,
+      "is_correct": 0,
+      "j_path": 0.1648809523809524,
+      "mean_length": 5.0,
+      "modal_ans": 10,
+      "target_ans": 12
+    },
+    {
+      "problem_id": 95,
+      "s_ans": 1.0,
+      "is_correct": 0,
+      "j_path": 0.15714285714285717,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 16
+    },
+    {
+      "problem_id": 96,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.09200680272108842,
+      "mean_length": 5.0,
+      "modal_ans": 10,
+      "target_ans": 909
+    },
+    {
+      "problem_id": 97,
+      "s_ans": 0.875,
+      "is_correct": 1,
+      "j_path": 0.27653061224489794,
+      "mean_length": 4.375,
+      "modal_ans": 27,
+      "target_ans": 27
+    },
+    {
+      "problem_id": 98,
+      "s_ans": 0.875,
+      "is_correct": 0,
+      "j_path": 0.6428571428571429,
+      "mean_length": 5.0,
+      "modal_ans": 18,
+      "target_ans": 21
+    },
+    {
+      "problem_id": 99,
+      "s_ans": 0.5,
+      "is_correct": 0,
+      "j_path": 0.04115646258503401,
+      "mean_length": 4.875,
+      "modal_ans": 18,
+      "target_ans": 13
+    }
+  ]
+}

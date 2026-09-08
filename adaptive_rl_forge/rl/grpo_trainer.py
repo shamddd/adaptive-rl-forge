@@ -17,11 +17,12 @@ def train_grpo_step(
     device: torch.device,
     group_size: int = 4,
     kl_coeff: float = 0.05,
+    calibration_coeff: float = 0.0,
     ref_model: Optional[torch.nn.Module] = None,
 ) -> Tuple[float, float, float, int, float]:
     """
     Executes a GRPO step:
-    For each prompt in batch, generates G completions, computes group-normalized rewards & KL divergence.
+    For each prompt in batch, generates G completions, computes group-normalized rewards, KL divergence, & calibration loss.
     Returns: (pg_loss, mean_reward, kl_div, num_generated_tokens, elapsed_seconds)
     """
     model.train()
@@ -60,6 +61,13 @@ def train_grpo_step(
     # Policy Gradient Loss
     pg_loss = -(advantages * seq_log_probs).mean()
 
+    # Calibration penalty (Brier score between model sequence confidence and reward)
+    if calibration_coeff > 0.0:
+        seq_probs = torch.exp(token_log_probs.mean(dim=1))
+        flat_rewards = rewards.view(-1)
+        brier_loss = ((seq_probs - flat_rewards) ** 2).mean()
+        pg_loss = pg_loss + calibration_coeff * brier_loss
+
     # KL Penalty relative to reference policy if provided
     kl_loss = torch.tensor(0.0, device=device)
     if ref_model is not None:
@@ -79,3 +87,4 @@ def train_grpo_step(
     elapsed = time.time() - start
     gen_token_count = gen_tokens.numel()
     return pg_loss.item(), rewards.mean().item(), kl_loss.item(), gen_token_count, elapsed
+

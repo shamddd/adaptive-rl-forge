@@ -1,6 +1,7 @@
 # AdaptiveRL-Forge: Capability-Aware Dynamic Reinforcement Learning for Foundation Model Training
 
-**Current Status:** `JMLR STATUS: EMPIRICALLY VERIFIED — ALL RESULTS LINKED TO RUN PROVENANCE`
+**Research Status**: Empirically Verified Working Paper — JMLR Target  
+*(Note: "Empirically verified" designates internal computational provenance linking all primary results to physical PyTorch execution logs in `artifacts/empirical/`; the manuscript is a working paper targeting JMLR and has not yet been formally submitted.)*
 
 AdaptiveRL-Forge is a research repository investigating **Reinforcement Learning Plasticity** across intermediate pre-training checkpoints in language models and evaluating the **Capability-Aware Reinforcement Learning Scheduler (CARLS)**.
 
